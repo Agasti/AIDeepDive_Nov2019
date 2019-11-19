@@ -16,10 +16,13 @@ def duplicates(list1, list2):
 
 def pancaker(arg):
     '''replaces the first element of a list with the word "pancakes"'''    
-    
-    my_list = list(arg)
-    my_list[0] = 'pancakes'
-    return my_list
+    if type(arg) is tuple:
+        return ('pancake',) + arg[1:]
+    elif type(arg) is list:
+        arg[0] = 'pancakes'
+        return arg
+    else:
+        return 'pancake' + arg[1:]
 
 
 
